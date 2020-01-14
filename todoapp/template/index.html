@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TodoApp</title>
+</head>
+<body>
+    <center>
+ 
+    <h1>TODO APP</h1>
+    
+        <form method="post" action="">
+            {%csrf_token%}
+         <input type="text" name="addtext" >&nbsp&nbsp
+         <input type="submit" name="add" >
+        </form>
+        <div>
+            {% for things in post  %}
+            <h4>{{things.content}}</h4>&nbsp&nbsp<a href="{% url 'delete' things.id %}">delete</a>
+            {% endfor %}
+        </div>
+   </center>
+</body>
+</html>
